@@ -112,11 +112,12 @@ public class HudLayout extends SimplePreparableReloadListener<JsonObject> {
     }
 
     private static void cornerPreset() {
-        // Modo esquina: panel completo y ruedas más grandes.
+        // Modo esquina: panel completo y ruedas más grandes, anclado a la
+        // izquierda y abajo, en el mismo sitio que antes.
         compact = false;
-        anchorX = "right";
+        anchorX = "left";
         anchorY = "bottom";
-        offsetX = -8;
+        offsetX = 8;
         offsetY = -8;
         frame = true;
     }

@@ -131,8 +131,39 @@ public class StatsHud {
             default -> height - h + HudLayout.offsetY;
         };
 
+        // Indicador flotante de la orden activa: aparece arriba del HUD de estado.
+        if (!ClientCraftingCache.entries().isEmpty()) {
+            renderCraftingIndicator(g, width, height, HudLayout.compact);
+        }
+
         draw(g, stats, icon, cell, pad, gap, compact, HudLayout.frame, w, h, x, y, System.currentTimeMillis());
     };
+
+    private static void renderCraftingIndicator(GuiGraphics g, int width, int height, boolean compact) {
+        ClientCraftingCache.Entry entry = ClientCraftingCache.entries().get(0);
+        RecipeDatabase.Recipe recipe = RecipeDatabase.displayById(entry.recipeId);
+        if (recipe == null) return;
+
+        var font = Minecraft.getInstance().font;
+        int panelW = 96, panelH = 24;
+        int x = compact ? (width - panelW) / 2 : width - panelW - 8;
+        int y = compact ? height - 44 : height - 52;
+
+        g.fill(x, y, x + panelW, y + panelH, 0xC01B1B1B);
+        g.renderOutline(x, y, panelW, panelH, 0xFF6FD6D6);
+
+        net.minecraft.world.item.ItemStack output = new net.minecraft.world.item.ItemStack(recipe.outputItem(), recipe.outputCount());
+        g.renderItem(output, x + 4, y + 4);
+        g.renderItemDecorations(font, output, x + 4, y + 4);
+
+        float progress = entry.progress();
+        int barX = x + 22, barY = y + 7, barW = panelW - 28;
+        g.fill(barX, barY, barX + barW, barY + 3, 0xFF0A0A0A);
+        g.fill(barX, barY, barX + Math.round(barW * progress), barY + 3, 0xFF7FE3E3);
+
+        int secs = Math.max(0, entry.remainingTicks) / 20;
+        g.drawString(font, secs + "s", x + 22, y + 12, 0xFFE6E6E6, false);
+    }
 
     private static int iconSize(boolean compact) {
         // 11x11 es el tamaño nativo de las mascaras: en modo centro queda 1:1 y nitido.

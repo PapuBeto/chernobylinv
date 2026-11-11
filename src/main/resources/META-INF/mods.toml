@@ -79,6 +79,15 @@ config="chernobylinv.mixins.json"
     ordering="NONE"
     side="BOTH"
 
+# Integración opcional con TACZ: armas de fuego. Nuestro inventario ya cancela
+# todos los overlays cuando está abierto, por lo que su HUD no se dibuja encima.
+[[dependencies.${mod_id}]]
+    modId="tacz"
+    mandatory=false
+    versionRange="[1.1.8,)"
+    ordering="AFTER"
+    side="BOTH"
+
 # Integración opcional con Survivor's Arsenal: si no está instalado, el mixin
 # simplemente no encuentra ningún contenedor de loot y no hace nada.
 [[dependencies.${mod_id}]]

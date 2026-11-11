@@ -132,6 +132,10 @@ dependencies {
     implementation fg.deobf('blank:radioactive:0.4.6.1')
     implementation fg.deobf('blank:geckolib-forge-1.20.1:4.8.4')
 
+    // TACZ: armas de fuego. Se carga en el cliente de desarrollo para verificar
+    // que su HUD no se dibuje sobre nuestro inventario.
+    runtimeOnly fg.deobf('blank:tacz-1.20.1:1.1.8-hotfix')
+
     // Survivor's Arsenal: se cargan en el cliente de desarrollo para probar la
     // integración de cofres. No son dependencias de compilación: el mixin los
     // detecta por interfaz y el mod funciona aunque no estén instalados.

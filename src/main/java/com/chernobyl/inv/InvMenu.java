@@ -89,7 +89,7 @@ public class InvMenu extends AbstractContainerMenu {
         // Bolsillos: los 3 slots de hotbar que la HUD de 6 no muestra.
         // Sin estos slots, lo que se recoge ahí queda invisible e inaccesible.
         for (int i = 0; i < 3; i++) {
-            this.addSlot(new Slot(inv, 6 + i, 293 + i * 18, 247));
+            this.addSlot(new Slot(inv, 6 + i, 291 + i * 18, 247));
         }
 
         // Mochila: ventana de 9x3 a través de la capa de compatibilidad
