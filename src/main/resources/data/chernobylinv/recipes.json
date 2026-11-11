@@ -1,0 +1,67 @@
+{
+  "queueMax": 10,
+  "categories": [
+    {"id":"Tools","name":"Herramientas"},
+    {"id":"Weapons","name":"Armas"},
+    {"id":"Armor","name":"Armaduras"},
+    {"id":"Building","name":"Construcción"},
+    {"id":"Resources","name":"Recursos"},
+    {"id":"Consumables","name":"Consumibles"},
+    {"id":"Other","name":"Otros"}
+  ],
+  "recipes": [
+    {
+      "id": "stone_hatchet",
+      "output": "minecraft:stone_axe",
+      "name": "Hacha de piedra",
+      "description": "Una herramienta básica de supervivencia.",
+      "icon": "Items/stone_hatchet",
+      "category": "Tools",
+      "craftingTime": 15,
+      "craftingAmount": 1,
+      "maxCraftAmount": 10,
+      "ingredients": [
+        {"itemId": "minecraft:oak_planks", "amount": 2},
+        {"itemId": "minecraft:cobblestone", "amount": 3}
+      ],
+      "requirements": {"workbenchLevel": 0},
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "stick_bundle",
+      "output": "minecraft:stick",
+      "name": "Palos",
+      "description": "Palos básicos para herramientas.",
+      "icon": "Items/stick_bundle",
+      "category": "Resources",
+      "craftingTime": 2,
+      "craftingAmount": 4,
+      "maxCraftAmount": 10,
+      "ingredients": [
+        {"itemId": "minecraft:oak_planks", "amount": 2}
+      ],
+      "requirements": {"workbenchLevel": 0},
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "id": "torch_pack",
+      "output": "minecraft:torch",
+      "name": "Antorchas",
+      "description": "Iluminación básica.",
+      "icon": "Items/torch_pack",
+      "category": "Resources",
+      "craftingTime": 3,
+      "craftingAmount": 4,
+      "maxCraftAmount": 10,
+      "ingredients": [
+        {"itemId": "minecraft:stick", "amount": 1},
+        {"itemId": "minecraft:coal", "amount": 1}
+      ],
+      "requirements": {"workbenchLevel": 0},
+      "enabled": true,
+      "order": 3
+    }
+  ]
+}

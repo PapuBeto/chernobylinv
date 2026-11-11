@@ -1,0 +1,30 @@
+{
+  "recipes": [
+    {
+      "id": "test_iron_block",
+      "output": "minecraft:iron_block",
+      "count": 1,
+      "ingredients": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "test_torch_batch",
+      "output": "minecraft:torch",
+      "count": 4,
+      "ingredients": [
+        {
+          "item": "minecraft:stick",
+          "count": 1
+        },
+        {
+          "item": "minecraft:coal",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

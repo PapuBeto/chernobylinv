@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Forge MDK run dirs
+run/
+run-data/
+run-client.txt
+run-server.txt
+saves/
+config/*.toml
+config/chernobylinv-*.json
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IntelliJ run configurations
+*.log
+
